@@ -7,6 +7,7 @@
     <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="limits.css">
     <title>Limits</title>
 
     <head>
@@ -59,72 +60,7 @@
             <canvas id="firstIllustrationChart"></canvas>
         </div>
 
-        <script>
-            var firstIllustrationChart = new Chart(document.getElementById("firstIllustrationChart"), {
-
-                type: "bar",
-                data: {
-                    labels: [-4, -3 - 2, -1, 0, 1, 2, 3, 4],
-                    datasets: [{
-                        type: 'line',
-                        label: 'y = x^2',
-                        pointRadius: 0,
-                        data: [-4, -3, -2, -1, 0, 1],
-                        borderColor: "cyan",
-                        tension: 0.3
-                    }, {
-                        type: 'line',
-                        label: 'f(x) = x^2',
-                        pointRadius: 6,
-                        data: [null, null, null, null, null, 1],
-                        borderColor: "cyan",
-                        backgroundColor: "cyan",
-                        pointBackgroundColor: null,
-                        tension: 0.3,
-                    }, {
-                        type: 'line',
-                        label: 'y = x^2',
-                        pointRadius: 0,
-                        borderRadius: 0.1,
-                        data: [null, null, null, null, null, null, 2, 3],
-                        backgroundColor: "cyan",
-                        borderColor: 'cyan',
-                        tension: 0.3,
-                        pointBackgroundColor: "green",
-                    }, {
-                        type: 'line',
-                        label: 'y = x^2',
-                        pointRadius: 6,
-                        borderRadius: 0.1,
-                        data: [null, null, null, null, null, null, 2],
-                        borderColor: 'cyan',
-                        backgroundColor: "cyan",
-                        pointBackgroundColor: "cyan",
-
-                        tension: 0.3,
-                    }]
-
-                }, options: {
-                    scales: {
-                        x: {
-                            max: 10
-                        },
-                        y: {
-                            max: 6
-                        }
-
-                    },
-                    plugins: {
-                        legend: {
-                            labels: {
-                                filter: (legendItem, chartData) => legendItem.text !== 'y = x^2'
-                            }
-                        }
-                    }
-                }
-            })
-        </script>
-
+        
         <h3 style="text-align:center; margin-top: 4%">Based on the graph above</h3>
 
         <table id="topTable" style="width: 100%">
@@ -547,95 +483,6 @@
     </main>
 </body>
 
-<style>
-    * {
-        color: white;
-    }
-
-    .inline-text mjx-container[jax="CHTML"][display="true"] {
-        text-align: left;
-        display: inline;
-    }
-
-    .inline-text mjx-container[jax="CHTML"][display="true"] {
-        margin-bottom: 0;
-    }
-
-
-    .dropbtn {
-        cursor: pointer;
-    }
-
-    /* The container <div> - needed to position the dropdown content */
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    /* Dropdown Content (Hidden by Default) */
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #181a1b;
-        min-width: 160px;
-        z-index: 1;
-    }
-
-    .dropdown-content a {
-        padding: 8% 10%;
-        text-decoration: none;
-        display: block;
-    }
-
-    /* Change color of dropdown links on hover */
-    /* .dropdown-content a:hover {background-color: #f1f1f1} */
-
-    /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    main {
-        padding-bottom: 5%;
-    }
-
-    nav a {
-        text-decoration: none;
-        color: #318cf5;
-    }
-
-    table {
-        margin-top: 5%;
-        width: 100%;
-        text-align: center;
-    }
-
-    td {
-        width: 50%;
-        border-bottom: 1px solid green;
-        padding: 2% 0;
-    }
-
-
-    #topTable th,
-    #topTable td {
-        border: 3px ridge gold;
-    }
-
-    #topTable th {
-        border-bottom: none;
-    }
-
-    #topTable td {
-        border-top: dashed 3px gold;
-    }
-
-    .typeDiscontinuity,
-    .strat-name {
-        letter-spacing: 0.1em;
-        color: skyblue;
-        font-size: large;
-    }
-</style>
+<script src="limits.js"></script>
 
 </html>
