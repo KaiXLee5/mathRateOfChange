@@ -1,0 +1,180 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercises.css">
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <title>Topic review</title>
+</head>
+
+<body style="background-color: #181a1b; margin: 0; color: white;">
+    <div id="title">
+        <h3 style="text-align: center; padding:2% 0;  font-size: x-large; margin-bottom: 0;">RATE OF CHANGE
+        </h3>
+    </div>
+    <nav
+        style="z-index: 1;
+        font-weight: 500; background-color: #181a1b; display: flex; margin: 0 1%; justify-content: space-around; text-decoration: none; position: sticky; top:0; height: 10%; align-items: center; box-shadow: 0 2px 4px 0 rgba(0,0,0.2);">
+        <div class="dropdown">
+            <a class="dropbtn">LEARN</a>
+            <div class="dropdown-content">
+                <a href="./index2.html">Average ROC</a>
+                <a href="./iroc.html">Instantaneous ROC</a>
+            </div>
+        </div>
+        <a href="./limits.html">LIMITS</a>
+        <a href="./history.html">HISTORY</a>
+        <div class="dropdown">
+            <a class="dropbtn" style="color: white;">EXERCISES</a>
+            <div class="dropdown-content">
+                <a href="./exercises.html">SUBTOPIC EXERCISES</a>
+                <a href="./topicReview.html" style="color: white;">TOPIC REVIEW</a>
+            </div>
+        </div>
+        <a href="./teachers.html">TEACHERS</a>
+    </nav>
+
+    <main style="margin: 5% 8%;">
+
+        <div style="display: flex; justify-content: space-around; align-items: center; font-size: 150%;">
+
+            <a style="color: white; text-decoration: none;">Questions</a>
+            <a href="./topicReviewAnswers.html" style="color: #318cf5; margin-left: 1%; text-decoration: none;">Answers
+                &#8594;</a>
+        </div>
+
+        <div style="position: relative; ;border: 1px solid grey; padding: 0 5%; padding-bottom: 3%; margin-top: 5%;">
+
+            <div>
+                <p>
+                    1. Determine $$\lim_{x->5}$$, where $$f(x)= 6$$ if $$x=5$$; $$f(x) = -6$$ if $$x\neq5$$</p>
+                <div class="answers">
+                    <p>a) 6</p>
+                    <p>b) -6</p>
+                    <p>c) -2</p>
+                    <p>d) The limit doesn't exist</p>
+                </div>
+            </div>
+            <br>
+
+            <div style="margin-left:50%">
+                <p>2. Evaluate the limit, if it exists:
+                    $$\lim_{x->2}\frac{2-x}{x-2}$$</p>
+
+                <div class="answers">
+                    <p>a) 0</p>
+                    <p>b) does not exist</p>
+                    <p>c) -1</p>
+                    <p>d) None of the above</p>
+                </div>
+            </div>
+            <br>
+
+            <p>3. Determine the IROC equation of $$f(x) = 4x^3$$.</p>
+            <br>
+
+            <div style="margin-left:50%">
+                <p>4. Evaluate the following limit.</p>
+
+                <div class="answers">
+                    <p>$$\lim_{x->-2}\frac{(x+2)^3}{|x+2|}$$</p>
+                </div>
+            </div>
+            <br>
+
+            <p>5. Is this function continuous everywhere over
+                its domain? Justify your answer.</p>
+
+            <div class="answers">
+                <p>$$\begin{align} f(x) &= (x+1)^2&emsp;if&emsp;x < -1 \\ &= x&emsp;if&emsp;-1\le x \le1 \\ &=2x-x^2&emsp;if&emsp;x>1 \end{align}$$ </p>
+            </div>
+            <br>
+
+            <p style="margin-left:40%">6. Determine the equation of the tangent line to the graph of $$y = -6x^2
+                + 5$$ at the point $$(-1,-3).$$</p>
+            <br>
+
+            <div style="margin-right:40%">
+                <p>7. A skydiver jumps out of a plane that is flying 2500 meters above the ground. The skydiver's
+                    height,
+                    $$h$$,
+                    in
+                    meters, above the ground after $$t$$ seconds is $$h(t) = 2500t^2 - 4.9t + 5$$.</p>
+                <div style="text-align: center;">
+                    <p>a) Using the first derivative, determine the rate of change of the height of the skydiver at $$t
+                        =
+                        5s$$.
+                    </p>
+                    <p>b) The skydiver's parachute opens at 1000m above the ground. After how many seconds does this
+                        happen?
+                    </p>
+                    <p>c) What is the rate of change of the height of the skydiver at the time found in part b)?</p>
+                </div>
+            </div>
+            <br>
+            <p style="margin-left:50%">8. Explain why $$\lim_{x->1}\frac{1}{x-1}$$ does not exist.</p>
+            <br>
+
+            <div style="margin-right: 40%;">
+                <p>9. Which of the following statement is false? Justify your reasoning.
+                </p>
+                <div class="answers" style="text-align: center; display: block;">
+                    <p>a) Continuity implies existence of limit.</p>
+                    <p>b) Existence of limit implies continuity.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div style="height: 3%;"></div>
+</body>
+
+<style>
+    mjx-container[jax="CHTML"][display="true"] {
+        text-align: left;
+        display: inline;
+    }
+
+    .dropbtn {
+        cursor: pointer;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #181a1b;
+        min-width: 160px;
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        padding: 8% 10%;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    /* .dropdown-content a:hover {background-color: #f1f1f1} */
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    nav a {
+        color: #318cf5;
+        text-decoration: none;
+    }
+</style>
+
+</html>

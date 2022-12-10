@@ -1,0 +1,203 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #181a1b; margin: 0; color: white;">
+    <div id="title">
+        <h3 style="text-align: center; padding:2% 0; font-size: x-large; margin-bottom: 0;">RATE OF CHANGE
+        </h3>
+    </div>
+    <nav
+        style="z-index: 1;
+        font-weight: 500; background-color: #181a1b; display: flex; margin: 0 1%; justify-content: space-around; text-decoration: none; position: sticky; top:0; height: 10%; align-items: center; box-shadow: 0 2px 4px 0 rgba(0,0,0.2);">
+        <div class="dropdown">
+            <a class="dropbtn">LEARN</a>
+            <div class="dropdown-content">
+                <a href="./index2.html">Average ROC</a>
+                <a href="./iroc.html">Instantaneous ROC</a>
+            </div>
+        </div>
+        <a href="./limits.html">LIMITS</a>
+        <a href="./history.html" style="color: white;">HISTORY</a>
+        <div class="dropdown">
+            <a class="dropbtn">EXERCISES</a>
+            <div class="dropdown-content">
+                <a href="./exercises.html">SUBTOPIC EXERCISES</a>
+                <a href="./topicReview.html">TOPIC REVIEW</a>
+            </div>
+        </div>
+        <a href="./teachers.html">TEACHERS</a>
+    </nav>
+
+    <main style="padding: 0 8%;">
+        <section id="Greeks">
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+                <div style="background-color: red; width: 5em; height:0.5em"></div>
+
+                <p style="font-weight: 900; font-size: 150%; color: aqua; letter-spacing: 0.2em;">
+                    tHE GreeKS
+                </p>
+
+                <div style="background-color: red; width: 5em; height:0.5em"></div>
+
+            </div>
+            <div class="item">
+                <img src="./hexagon.png" style="width: clamp(15%, 20%, 30%);" alt="">
+                <p>Finding the area of a polygon is easy by dissecting it into triangles, then find the total areas of
+                    the
+                    triangles</p>
+            </div>
+            <div class="item">
+                <img src="./circle.png" style="width: clamp(15%, 20%, 30%);" alt="">
+                <p>but a circle can't be dissected into triangles due to its curvy surface</p>
+            </div>
+        </section>
+
+        <div id="banner">
+            <p>introducing_ <br>the method of exhaustion</p>
+        </div>
+
+        <div style="width: 100%; display: flex; justify-content: center;">
+            <img src="./clipart855365-removebg-preview.png"
+                alt="750px-archimedes Pi - Svg - Archimedes Method Of Exhaustion@clipartmax.com">
+        </div>
+        <p style="font-size: 115%; text-align: center; margin-top: 4%;">From the left to rightmost image, the polygon
+            resembles the shape of a circle more as
+            the number of sides increases.</p>
+
+        <div class="info" style="margin-top: 5%;">
+            <p style="color: red;">&#x24D8;</p>
+            <div style="width: 3%;"></div>
+            <p>By making a polygon of infinite number of sides that touch the border of a circle, the area of the
+                polygon is
+                approximately the area of the polygon itself. </p>
+
+        </div>
+
+        <section id="newton" style="margin-top: 15%;">
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+                <div style="background-color: red; width: 5em; height:0.5em"></div>
+
+                <p style="font-weight: 900; font-size: 150%; color: aqua; letter-spacing: 0.2em;">
+                    ISAAC NEWTON
+                </p>
+
+                <div style="background-color: red; width: 5em; height:0.5em"></div>
+
+            </div>
+            <div style="display: flex;">
+                <img src="newton-gc16933c53_1280-removebg-preview.png" style="width: 20%; height: 45%; " alt="">
+                <div style="width: 10%;"></div>
+                <div style="letter-spacing: 0.03em;">
+                    <p>Derivative serves a vital role in Newton's laws of motions. During his time, he needed a way to
+                        solve
+                        rates of change related problems to formulate his laws of motions. </p>
+                    <p>Derivative and integrals make up calculus, derivative is about using approximations and
+                        infinities to
+                        solve for a rate of change; whereas integral is about using approximations and infinities to
+                        solve
+                        for areas and volume.</p>
+                    <p>Using the ideas of the Greeks, he was able to discover that the instantaneous rate of change at a
+                        certain point is can be found using the average rate of change between that and another point on
+                        the
+                        graph, while making the distance of the points approximate 0.</p>
+                </div>
+            </div>
+        </section>
+
+        <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 10%;">
+            <div style="background-color: red; width: 5em; height:0.5em"></div>
+
+            <p style="font-weight: 900; font-size: 150%; color: aqua; letter-spacing: 0.2em;">
+                LeaRN More @
+            </p>
+
+            <div style="background-color: red; width: 5em; height:0.5em"></div>
+
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/5M2RWtD4EzI" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+
+        <p style="font-size: 370%; font-style: oblique; color: goldenrod; margin-bottom: 0;">And that, ladies and gents,
+            is how derivatives,
+            or rate of change was born</p>
+        <div style="height: 10%;"></div>
+    </main>
+</body>
+<style>
+    .dropbtn {
+        cursor: pointer;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #181a1b;
+        min-width: 160px;
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        padding: 8% 10%;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    /* .dropdown-content a:hover {background-color: #f1f1f1} */
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #318cf5;
+    }
+
+    #greeks,
+    #newton {
+        margin-top: 8%
+    }
+
+    #greeks .item {
+        display: flex;
+        align-items: center;
+        font-size: 125%;
+    }
+
+    #banner {
+        text-transform: uppercase;
+        font-size: 400%;
+        text-align: center;
+        color: yellow;
+    }
+
+    .info {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 120%;
+        align-items: center;
+    }
+</style>
+
+</html>

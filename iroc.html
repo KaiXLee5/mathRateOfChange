@@ -1,0 +1,439 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <title>IROC</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body style="background-color: #181a1b; margin: 0;">
+    <div id="title">
+        <h3 style="text-align: center; padding:2% 0; color: white; font-size: x-large; margin-bottom: 0;">RATE OF CHANGE
+        </h3>
+    </div>
+    <nav
+        style="z-index: 1;
+        font-weight: 500; background-color: #181a1b; display: flex; margin: 0 1%; justify-content: space-around; text-decoration: none; position: sticky; top:0; height: 10%; align-items: center; box-shadow: 0 2px 4px 0 rgba(0,0,0.2);">
+        <div class="dropdown">
+            <a class="dropbtn" style="color: white;">LEARN</a>
+            <div class="dropdown-content">
+                <a href="./index2.html">Average ROC</a>
+                <a href="./iroc.html" style="color: white;">Instantaneous ROC</a>
+            </div>
+        </div>
+        <a href="./limits.html">LIMITS</a>
+        <a href="./history.html">HISTORY</a>
+        <div class="dropdown">
+            <a class="dropbtn">EXERCISES</a>
+            <div class="dropdown-content">
+                <a href="./exercises.html">SUBTOPIC EXERCISES</a>
+                <a href="./topicReview.html">TOPIC REVIEW</a>
+            </div>
+        </div>
+        <a href="./teachers.html">TEACHERS</a>
+    </nav>
+
+    <header style="margin-top: 8%; color: #e8e6e3;">
+        <h3>How does AROC compare to IROC?
+        </h3>
+        <h4>
+            <h3>Formula of AROC:
+            </h3>
+            <p>$$\frac{y_2-y_1}{x_2-x_1}$$</p>
+        </h4>
+
+        <div class="info">
+            <p style="color: red;">&#x24D8;</p>
+            <div style="width: 1%;"></div>
+            <p>IROC is same as AROC except that the distance of x approaches 0</p>
+        </div>
+
+        <div style="width: clamp(70%,80%,90%); margin: 0 auto;">
+            <canvas id="firstPrincipleChart"></canvas>
+        </div>
+
+        <h3 style="margin-top: 5%;">Based on the graph above, say </h3>
+        <h3 style="text-align: center;" class="centered"> $$x_1 = x$$ of point A</h3>
+
+        <h3 class="centered" style="text-align: center;">$$x_2 = x_1+h = $$ x of point B</h3>
+        <h3>$$y_1 = f(x_1)$$ </h3>
+        <h3>$$y_2 = f(x_1+h) = f(x_2)$$ </h3>
+    </header>
+
+    <main style="color: #e8e6e3;">
+        <h3>IROC:</h3>
+        <h3>$$\lim_{h->0} \frac{f(x_1+h)-f(x_1)}{x_1+h-x_1}$$ </h3>
+        <h3>$$=\lim_{h->0} \frac{f(x+h)-f(x)}{x+h-x}$$ </h3>
+
+        <table style="color: white;">
+            <tr>
+                <th style="border-right: none;">AROC</th>
+                <th>IROC</th>
+            </tr>
+            <tr>
+                <td style="border-right: none">
+                    <h3>$$\frac{y_2-y_1}{x_2-x_1}$$ </h3>
+                </td>
+                <td>
+                    <h3>$$\lim_{h->0} \frac{f(x+h)-f(x)}{h}$$ </h3>
+                </td>
+            </tr>
+        </table>
+
+        <h3 style="margin-top: 13%;">Illustrating IROC: </h3>
+        <div style="width: clamp(70%,80%,90%); margin: 0 auto;">
+            <canvas id="irocChart"></canvas>
+        </div>
+
+        <div id="deltaX" style="margin-top: 3%; text-align: center;">
+
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <div>Adjust $$\delta x$$: <input type="range" min="0" max="6" value="6" class="slider" id="myRange">
+                </div>
+                Current AROC: <p id="currIroc">0</p>
+            </div>
+            <p>IROC of $$y=x^2$$ at x=-3 is -6</p>
+        </div>
+
+        <script>
+            var slider = document.getElementById("myRange")
+            var text = document.getElementById("textRange")
+            var currIroc = document.getElementById("currIroc")
+
+            var firstPoint = {
+                label: 'point A',
+                type: 'line',
+                pointRadius: 5,
+                pointBackgroundColor: "blue",
+                data: [null, null, null, null, 1],
+                borderColor: 'blue',
+                fill: false,
+            }
+
+            var secondPoint = {
+                label: 'point B',
+                type: 'line',
+                pointRadius: 5,
+                pointBackgroundColor: "orange",
+                data: [null, null, null, null, null, 4],
+                borderColor: 'orange',
+                fill: false,
+            }
+
+            var h = {
+                label: 'magnitude of h',
+                type: 'line',
+                pointRadius: 2,
+                pointBackgroundColor: "brown",
+                data: [null, null, null, null, 1, 1],
+                borderColor: 'brown',
+                fill: false,
+            }
+
+            var firstPrincipleChart = new Chart(document.getElementById("firstPrincipleChart"), {
+
+                type: "bar",
+                data: {
+                    labels: [-3, -2, -1, 0, 1, 2, 3],
+                    datasets: [{
+                        type: 'line',
+                        label: 'y=x^2',
+                        pointRadius: 0,
+                        data: [9, 4, 1, 0, 1, 4, 9],
+                        // backgroundColor: "cyan",
+                        borderColor: 'cyan',
+                        tension: 0.3,
+                        pointBackgroundColor: "blue",
+                    }, firstPoint, secondPoint, h]
+                },
+            });
+
+            var plotting = {
+                label: 'iroc',
+                type: 'line',
+                pointRadius: 4,
+                data: [9, 9, 9, 9, 9, 9, 9],
+                borderColor: 'orange',
+                fill: false,
+            }
+
+            var deltaX = {
+                label: 'delta x',
+                type: 'line',
+                pointRadius: 4,
+                data: [9, 9, 9, 9, 9, 9, 9],
+                borderColor: 'grey',
+                fill: false,
+            }
+
+            var irocChart = new Chart(document.getElementById("irocChart"), {
+                type: "bar",
+                data: {
+                    labels: [-3, -2, -1, 0, 1, 2, 3],
+                    datasets: [{
+                        label: 'y=x^2',
+                        type: 'line',
+                        pointRadius: 4,
+                        data: [9, 4, 1, 0, 1, 4, 9],
+                        // backgroundColor: "cyan",
+                        tension: 0.3,
+                        borderColor: "cyan",
+                        pointBackgroundColor: "blue",
+                    }, plotting, deltaX]
+                },
+            });
+
+
+            slider.addEventListener('change', function () {
+                switch (slider.value) {
+                    case '6': {
+                        plotting.data = [9, 9, 9, 9, 9, 9, 9]
+                        deltaX.data = [9, 9, 9, 9, 9, 9, 9]
+                        currIroc.innerText = 0
+                        break
+                    }
+                    case '5': {
+                        plotting.data = [9, 8, 7, 6, 5, 4]
+                        deltaX.data = [9, 9, 9, 9, 9, 9]
+                        currIroc.innerText = -1
+                        break
+                    }
+                    case '4': {
+                        plotting.data = [9, 7, 5, 3, 1]
+                        deltaX.data = [9, 9, 9, 9, 9]
+                        currIroc.innerText = -2
+                        break
+                    }
+                    case '3': {
+                        plotting.data = [9, 6, 3, 0]
+                        deltaX.data = [9, 9, 9, 9]
+                        currIroc.innerText = -3
+                        break
+                    }
+                    case '2': {
+                        plotting.data = [9, 5, 1]
+                        deltaX.data = [9, 9, 9]
+                        currIroc.innerText = -4
+                        break
+                    }
+                    case '1': {
+                        plotting.data = [9, 4]
+                        deltaX.data = [9, 9]
+                        currIroc.innerText = -5
+                        break
+                    }
+                    default: {
+                        plotting.data = [9]
+                        deltaX.data = [9]
+                        currIroc.innerText = -6
+                        break
+                    }
+                }
+                irocChart.update()
+            })
+
+        </script>
+
+        <section id="example-question" style="position: relative;">
+
+            <div style=" margin-top: 5%;
+            border: 2px solid cyan;
+            border-radius: 4%;
+            padding: 4%;">
+                <h2>Steps in finding the IROC</h2>
+                <h4>&#9312; Write the equation $$\lim_{h->0} \frac{f(x+h)-f(x)}{h}$$</h4>
+                <h4>&#9313; Cancel out the h in denominator with h in the numerator</h4>
+                <h4>&#9314; Evaluate the limit.</h4>
+            </div>
+
+            <div class="info" style="margin-top: 10%; border: 3px solid yellow; padding:2%; border-radius:10%;">
+                <p style="color: red;">&#x24D8;</p>
+                <div style="width: 1%;"></div>
+                <p>We can't simply change the h of the equation to 0 during the first stage of the equation as it will
+                    yield
+                    a zero division error. It is explained in the <a href="./limits.html#zeroDivision"
+                        style="color: white;">limits page</a></p>
+            </div>
+
+            <div style="background-color: red; width: 20%; height:1%; margin: 10% 0; margin-left: 80%;"></div>
+
+            <p style="font-size: 120%;">Eg: Evaluate the IROC for the following equation at x = -3:</p>
+            <p>$$f(x) = x^2 + 9$$</p>
+
+            <div class="iroc-step" style="margin-top: 10%;">
+                <div style="width: 40%;"></div>
+                <div>
+                    <h2 style="text-align: center; margin-top: 7%;">&#9312;Write the equation</h2>
+                    <p>$$\lim_{h->0} \frac{f(x+h)-f(x)}{h}$$</p>
+                    <p>$$=\lim_{h->0} \frac{2(-3+h)^2-9-(2(-3)^2+9}{h}$$</p>
+                    <p>$$=\lim_{h->0} \frac{2(9-6h+h^2)-9-(2(-3)^2+9}{h}$$</p>
+                    <p>$$=\lim_{h->0} \frac{2(9-6h+h^2)-18}{h}$$</p>
+                    <p>$$=\lim_{h->0} \frac{18-12h+2h^2-18}{h}$$</p>
+                </div>
+            </div>
+
+            <div class="iroc-step">
+
+                <div>
+                    <h2 style="text-align: center; margin-top: 7%;">&#9313; Cancel out the denominator h</h4>
+                        <p>$$=\lim_{h->0} \frac{2h(h-6)}{h}$$</p>
+                        <p>$$=\lim_{h->0} 2(h-6)$$</p>
+                    </h2>
+                </div>
+                <div style="width: 30%"></div>
+            </div>
+
+            <div class="iroc-step">
+                <div style="width: 40%;"></div>
+                <div>
+                    <h2 style="text-align: center; margin-top: 7%;">&#9314; Evaluate the limit.</h2>
+                    <p>$$=\lim_{h->0} 2(h-6)$$</p>
+                    <p>$$=-12$$</p>
+                    <div style="display: flex;">
+                        <p style="color: yellow;">&#63;</p>
+                        <div style="width: 3%;"></div>
+                        <a href="#myVid" style="color: aqua; font-size: 105%;">Find out why we can substitute the 0 of
+                            the h
+                            approximation directly into the equation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <section>
+        <div class="change-page" id="try-exercises" onclick="window.location.href = './exercises.html'">
+            <p style="color: yellow;">&#9998;</p>
+            <div style="width: 2%;"></div>
+            <p style="color: #e8e6e3;">Try some exercises</p>
+        </div>
+
+        <div class="change-page" id="learn-more" style="margin-bottom: 0;"
+            onclick="window.location.href = './limits.html'">
+            <p style="color: yellow;">&#63;</p>
+            <div style="width: 2%;"></div>
+            <p style="color: #e8e6e3;">Learn more about limits</p>
+        </div>
+    </section>
+
+    <section style="text-align: center;">
+        <h2 style="margin-top: 15%; color: yellow">Or watch some YouTube videos</h2>
+        <iframe id="myVid" width="560" height="315" src="https://www.youtube.com/embed/eBkb3H_-1Jo"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+
+    </section>
+    <div style="height: 10%;"></div>
+
+</body>
+
+<style>
+    #deltaX mjx-container[jax="CHTML"][display="true"],
+    .centered mjx-container[jax="CHTML"][display="true"] {
+        display: inline;
+    }
+
+
+    .dropbtn {
+        cursor: pointer;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #181a1b;
+        min-width: 160px;
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        padding: 8% 10%;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    /* .dropdown-content a:hover {background-color: #f1f1f1} */
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    nav a {
+        color: #318cf5;
+        text-decoration: none;
+    }
+
+    .info,
+    .change-page {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 120%;
+        align-items: center;
+    }
+
+    header,
+    main {
+        margin: 0 15%;
+    }
+
+    .change-page {
+        border: 1px solid white;
+        font-size: 150%;
+        width: 50%;
+        margin: 5% auto;
+    }
+
+    .change-page:hover {
+        /* background-color: lightcyan; */
+        cursor: pointer;
+    }
+
+    table {
+        margin-top: 10%;
+        width: 100%;
+    }
+
+    th,
+    td {
+        border: 2px solid chartreuse;
+        padding: 2%;
+    }
+
+    td {
+        width: 50%;
+    }
+
+    th {
+        text-align: center;
+        border-bottom: none;
+    }
+
+
+    .iroc-step {
+        display: flex;
+    }
+
+    iframe {
+        margin-top: 10%;
+    }
+</style>
+
+</html>

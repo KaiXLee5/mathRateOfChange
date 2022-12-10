@@ -1,0 +1,248 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercises.css">
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <title>Topic review</title>
+</head>
+
+<body style="background-color: #181a1b; margin: 0; color: white;">
+    <div id="title">
+        <h3 style="text-align: center; padding:2% 0; font-size: x-large; margin-bottom: 0;">RATE OF CHANGE
+        </h3>
+    </div>
+    <nav
+        style="z-index: 1;
+        font-weight: 500; background-color: #181a1b; display: flex; margin: 0 1%; justify-content: space-around; text-decoration: none; position: sticky; top:0; height: 10%; align-items: center; box-shadow: 0 2px 4px 0 rgba(0,0,0.2);">
+        <div class="dropdown">
+            <a class="dropbtn">LEARN</a>
+            <div class="dropdown-content">
+                <a href="./index2.html">Average ROC</a>
+                <a href="./iroc.html">Instantaneous ROC</a>
+            </div>
+        </div>
+        <a href="./limits.html">LIMITS</a>
+        <a href="./history.html">HISTORY</a>
+        <div class="dropdown">
+            <a class="dropbtn" style="color: white;">EXERCISES</a>
+            <div class="dropdown-content">
+                <a href="./exercises.html">SUBTOPIC EXERCISES</a>
+                <a href="./topicReview.html" style="color: white;">TOPIC REVIEW</a>
+            </div>
+        </div>
+        <a href="./teachers.html">TEACHERS</a>
+    </nav>
+
+    <main style="margin: 5% 8%;">
+
+        <div style="display: flex; justify-content: space-around; align-items: center; font-size: 150%;">
+
+            <a href="./topicReview.html" style="color: #318cf5; text-decoration: none;">&#8592; Questions</a>
+            <a style="margin-left: 1%; text-decoration: none;">Answers</a>
+        </div>
+
+        <div style="margin-top: 5%;">
+            <table style="width: 100%;">
+                <tr>
+                    <td>1.</td>
+                    <td>b) The x approaches 5 but is never exactly 5</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td> c) $$\lim_{x->2}\frac{2-x}{x-2} = \lim_{x->2}\frac{-(x-2)}{x-2} = \lim_{x->2}-1 = -1$$
+                    </td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>
+                        <p class="line-breaks">
+                            $$IROC = \lim_{h->0}\frac{f(x+h)-f(x)}{h}$$
+                            $$=\lim_{h->0}\frac{4(x+h)^3-4x^3}{h}$$
+                            $$=\lim_{h->0}\frac{4(x^3+3x^2h+3hx^3+h^3)-4x^3}{h}$$
+                            $$=\lim_{h->0}\frac{4x^3+12x^2h+12hx^3+4h^3-4x^3}{h}$$
+                            $$=\lim_{h->0}\frac{12x^2h+12xh^2+4h^3}{h}$$
+                            $$=\lim_{h->0}\frac{h(12x^2+12xh+4h^2)}{h}$$
+                            $$=\lim_{h->0}12x^2+12xh+4h^2$$
+                            $$=12x^2$$
+                    </td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td>
+                        <p class="line-breaks">
+                            $$ \lim_{x->-2^-}\frac{(x+2)^3}{|x+2|}$$
+                            $$=\lim_{x->-2^-}\frac{(x+2)^3}{-(x+2)}$$
+                            $$=\lim_{x->-2^-}\frac{(x+2)^2}{-1}$$
+                            $$=\lim_{x->-2^-}-(x+2)^2$$
+                            $$=0$$
+                            <br>
+                            $$ \lim_{x->-2^+}\frac{(x+2)^3}{|x+2|}$$
+                            $$=\lim_{x->-2^+}(x+2)^2$$
+                            $$=0$$
+                            <br>
+                        <p style="text-align: center;">Since both left and right side limits are 0, the limit is 0.</p>
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>5.</td>
+                    <td>
+                        <p class="line-breaks">
+                            $$\lim_{x->-1^-}f(x) = 0$$
+                            $$\lim_{x->-1^+}f(x) = -1$$
+                            $$f(-1)=-1$$
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>6.</td>
+                    <td style="padding: 5% 4%;">
+                        <p>No. Since both left and right side limits of when x approaches -1
+                            are
+                            unequal,
+                            the function is discontinuous at $$x=-1.$$</p>
+
+                        <p style="text-align: center;">At $$x = -1, IROC = 12(-1) = -12.$$</p>
+                        <br>
+
+                        <p class="line-breaks">$$y = mx + c$$</p>
+                        <p class="line-breaks">$$-3 = -12(-1) + c$$</p>
+                        <p class="line-breaks">$$c = 9$$</p>
+                        <p class="line-breaks">$$y = -12x + 9$$</p>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7a)</td>
+                    <td>
+                        <p class="line-breaks"> $$IROC = \lim_{h->0}\frac{2500(t+h)^2-4.9(t+h)+5-(2500t^2-4.9t+5)}{h}$$
+                            $$=\lim_{h->0}\frac{2500(t^2+2ht+h^2)-4.9t-4.9h+5-2500t^2+4.9t-5}{h}$$
+                            $$=\lim_{h->0}\frac{2500t^2+5000ht+2500h^2-4.9t-4.9h+5-2500t^2+4.9t-5}{h}$$
+                            $$=\lim_{h->0}\frac{5000ht+2500h^2-4.9h}{h}$$
+                            $$=\lim_{h->0}\frac{h(5000t+2500h-4.9)}{h}$$
+                            $$=\lim_{h->0}5000t+2500h-4.9$$
+                            $$=5000t-4.9$$</p>
+
+                        $$5000(5)-4.9 = 24995.1 m/s$$
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>b)</td>
+                    <td>
+                        <p>$$1000 = 2500t^2 - 4.9t + 5$$</p>
+                        <p> $$2500t^2 - 4.9t - 995 = 0$$</p>
+
+                        <p>$$t_1 = -0.63s, t_2 = 0.63s$$
+                        </p>
+                        $$0.63s$$
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>c)</td>
+                    <td>$$5000(0.63)-4.9 = 3145.1$$ m/s</td>
+                </tr>
+
+                <tr>
+                    <td>8. </td>
+                    <td>
+                        <p class="line-breaks">$$\lim_{x->1^+}\frac{1}{x-1} = + \infty$$ $$\lim_{x->1^-}\frac{1}{x-1}
+                            = -
+                            \infty$$
+                        </p>
+                        <p style="text-align: center;">Since the left and right side limits are unequal, the limit
+                            doesn't exist.
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>9b)</td>
+                    <td>In a jumping discontinuity, the limit exists.</td>
+                </tr>
+
+            </table>
+        </div>
+    </main>
+</body>
+
+<style>
+    mjx-container[jax="CHTML"][display="true"] {
+        text-align: left;
+        display: inline;
+    }
+
+    .line-breaks mjx-container[jax="CHTML"][display="true"] {
+        text-align: center;
+        display: block;
+    }
+
+    td {
+        border: 2px solid red;
+        border-radius: 5%;
+        padding: 5% 0;
+    }
+
+    td:first-child {
+        font-size: 150%;
+        width: 20%;
+        text-align: center;
+        border-right: 2px dashed white;
+    }
+
+    td:last-child {
+        text-align: center;
+        border-left: none;
+    }
+
+    .answers {
+        justify-content: space-evenly;
+        display: flex;
+    }
+
+    nav a{
+        color:#318cf5;
+        text-decoration: none;
+    }
+
+    .dropbtn {
+        cursor: pointer;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #181a1b;
+        min-width: 160px;
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        padding: 8% 10%;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    /* .dropdown-content a:hover {background-color: #f1f1f1} */
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+</style>
+
+</html>

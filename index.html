@@ -1,0 +1,112 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color: #181a1b; margin: 0; color: white;">
+    <div id="title">
+        <h3 style="text-align: center; padding:2% 0; font-size: x-large; margin-bottom: 0;">RATE OF CHANGE
+        </h3>
+    </div>
+    <nav>
+        <div class="dropdown">
+            <a class="dropbtn" style="color: white;">LEARN</a>
+            <div class="dropdown-content">
+                <a href="./index2.html" style="color: white;">Average ROC</a>
+                <a href="./iroc.html">Instantaneous ROC</a>
+            </div>
+        </div>
+        <a href="./limits.html">LIMITS</a>
+        <a href="./history.html">HISTORY</a>
+        <div class="dropdown">
+            <a class="dropbtn">EXERCISES</a>
+            <div class="dropdown-content">
+                <a href="./exercises.html">SUBTOPIC EXERCISES</a>
+                <a href="./topicReview.html">TOPIC REVIEW</a>
+            </div>
+        </div>
+        <a href="./teachers.html">TEACHERS</a>
+    </nav>
+
+    <section id="content" style="margin: 0 15%; margin-top: 3em;">
+
+        <div class="info">
+            <p style="color: red;">&#x24D8;</p>
+            <div style="width: 1%"></div>
+            <p>
+                The rate of change (ROC) is the speed at which a variable changes over a specific period of time. -
+                Investopedia
+            </p>
+        </div>
+
+        <p class="inline-text" style="text-align: center;">&#8756; Rate of change
+            $$=\frac{Change&emsp;in&emsp;dependent&emsp;variable}{Change&emsp;in&emsp;independent&emsp;variable}$$</p>
+
+        <p>
+        </p>
+
+        <div id="gradientIllustration">
+            <!-- <canvas id="gradientChart" style="width:100%;max-width:700px; margin: 0 auto"></canvas> -->
+        </div>
+
+        <section>
+            <h2 style="margin-top: 10%; color: yellow">Example:</h2>
+
+            <div id="illustraion">
+                <canvas id="arocChart" style="width:100%;max-width:700px; margin: 0 auto;"></canvas>
+
+                <h3>At x = 1, y is 1. <br><br>At x = 2, y is 4. </h3>
+                <h3>$$Rate&emsp;of&emsp;change = \frac{4-1}{2-1}$$</h3>
+                <h3>$$=3$$</h3>
+                <h3>If we draw a line between those two points, the gradient of the line will be
+                    3, which is also
+                    the
+                    rate of change.</h3>
+            </div>
+
+            <h3>
+                <h3 style="margin-top: 5%;"><b>Gradient formula:</b></h3>
+
+                <h3>$$m = \frac{y_2-y_1}{x_2-x_1}$$</h3>
+            </h3>
+        </section>
+
+        
+        <section>
+            <div id="try-exercises" onclick="window.location.href='./exercises.html'">
+                <p style="color: yellow;">&#9998;</p>
+                <div style="width: 2%;"></div>
+                <p>Try some exercises</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 style="margin-top: 15%; color: yellow">Or watch some YouTube videos</h2>
+            <iframe style="margin-top: 5%;" width="560" height="315" src="https://www.youtube.com/embed/lQRiw264bnI"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <iframe width="560" height="315" style="margin-top: 5%;" src="https://www.youtube.com/embed/eBkb3H_-1Jo"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+        </section>
+    </section>
+
+    <div style="height: 10%;"></div>
+
+
+</body>
+
+<script src="index.js"></script>
+
+</html>

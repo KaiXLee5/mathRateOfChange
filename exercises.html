@@ -1,0 +1,202 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <title>Document</title>
+</head>
+
+<body style="background-color: #181a1b; margin: 0; color: white;">
+    <div id="title">
+        <h3 style="text-align: center; padding:2% 0; font-size: x-large; margin-bottom: 0;">RATE OF CHANGE
+        </h3>
+    </div>
+    <nav
+        style="z-index: 1;
+        font-weight: 500; background-color: #181a1b; display: flex; margin: 0 1%; justify-content: space-around; text-decoration: none; position: sticky; top:0; height: 10%; align-items: center; box-shadow: 0 2px 4px 0 rgba(0,0,0.2);">
+        <div class="dropdown">
+            <a class="dropbtn">LEARN</a>
+            <div class="dropdown-content">
+                <a href="./index2.html">Average ROC</a>
+                <a href="./iroc.html">Instantaneous ROC</a>
+            </div>
+        </div>
+        <a href="./limits.html">LIMITS</a>
+        <a href="./history.html">HISTORY</a>
+        <div class="dropdown">
+            <a class="dropbtn" style="color: white;">EXERCISES</a>
+            <div class="dropdown-content">
+                <a href="./exercises.html" style="color: white;">SUBTOPIC EXERCISES</a>
+                <a href="./topicReview.html">TOPIC REVIEW</a>
+            </div>
+        </div>
+        <a href="./teachers.html">TEACHERS</a>
+    </nav>
+
+    <main style="margin: 5% 12%; ">
+
+        <div style="display: flex; justify-content: space-around; align-items: center; font-size: 150%;">
+
+            <a style="text-decoration: none;">Questions</a>
+            <a href="./exercisesAnswers.html" style="color: #318cf5; margin-left: 1%; text-decoration: none;">Answers
+                &#8594;</a>
+        </div>
+
+        <section id="limits" style="border: 1px solid grey; padding: 0 5%; margin-top: 10%;">
+            <h2>LIMITS</h2>
+            <div class="questions">
+
+            <h4>1. Evaluate $$\lim_{x->2}\frac{x^2+3x-10}{x^2-2x}$$</h4>
+
+            <!-- Solution: x2x2+3x-10x2-2x after factorize and become x2(x-2)(x+5)x(x-2)
+
+            Cancel out (x-2) from both numerator and denominator: x2(x+5)x
+
+            Sub 2 into the equation which become x2(2+5)2
+
+            Final answer: x2= 7 -->
+
+            <h4>2. Evaluate $$\lim_{x->8}\frac{x-8}{\sqrt{x-4} - 2}$$</h4>
+
+            <!-- Solution: x8x-8x-4 - 2 x-4+ 2x-4 + 2
+
+            x-4 - 2x-4 +2 (multiply two denominator together)
+
+            x8(x-8)(x-4+ 2)x-4-4 x8(x-8)(x-4+ 2)(x-8) , then cancel out both (x-8)
+
+            x8x-4+ 2, sub 8 into the equation and get the answer 4.
+ -->
+
+            <h4>3. Evaluate $$\lim_{x->0}\frac{\sqrt{x+1}-1}{x}$$</h4>
+
+            <!-- Solution: let v = (x+1)½
+
+            X+1 = v2
+            X = v2 - 1
+            x0 = v2 -1 = 0
+            v= 1 1
+
+            v1v-1v2-1
+            = v1v-1(v-1)(v+1) (cancel out (v-1))
+            = v11v+1 = v111+1
+            = v112 --> 
+            </div>
+        </section>
+
+        <section id="aroc" style="border: 1px solid grey; padding: 0 5%; margin-top: 10%;">
+            <h2>AROC</h2>
+            <div class="questions">
+
+                <h4>1. Find the AROC of the following:</h4>
+                <ul style="list-style-type: none;">
+                    <li>a) $$y = x^4, [0 \le x \le 10]$$</li>
+                    <li>b) $$y = 2x^2 - 3x + 5,[-5 \le x \le 3]$$</li>
+                    <li>c) $$y = 3x^3 - 5x,[1 \le x \le 2]$$</li>
+                </ul>
+                <br>
+                <h4>2. Find out if the AROC of the following equation can ever be bigger than 25.</h4>
+                <p style="text-align: center;
+                display: block;">$$y=x^3,[2 \le x \le 5]$$</p>
+                <br>
+                <h4>3. Which of the following is true?</h4>
+                <ul>
+                    <li>Given the end x-coordinates of an interval, x = -8 and x = 8, that belongs to a cubic equation.
+                        If the AROC between x=-8 and 8 is
+                        positive, then within the range, there cannot be an interval of which AROC is negative.</li>
+                    <br>
+                    <li>Given a linear equation, if the AROC of one of the equation's interval is positive, there can be
+                        an interval of the equation which AROC is negative.</li>
+
+                </ul>
+            </div>
+        </section>
+        <section id="iroc" style="border: 1px solid grey; padding: 0 5%; padding-bottom:5%;  margin-top: 5%;">
+            <h2>IROC</h2>
+            <div class="questions">
+                <h4>1. Find the IROC of the following:</h4>
+                <ul style="list-style-type: none;">
+                    <li>a) $$y = x^2, x = 4$$</li>
+                    <li>b) $$y = x^2 - 7x + 11, x=-1$$</li>
+                    <li>c) $$y = -3x^3 - 5x, x=1$$</li>
+                </ul>
+                <br>
+
+                <h4>2. Given equation $$y_1 = x^2 - 6x+1,$$ and $$y_2 = -2x + 5$$, find any $$x$$ of $$y_1$$ and $$y_2$$
+                    of where the equations have the same IROC. </h4>
+                <br>
+
+                <h4>3. Explain the importance of each individual component in the following equation of IROC. </h4>
+                <h3 style="text-align: center;">IROC $$=\lim_{y->0} \frac{f(x+h)-f(x)}{h}$$</h3>
+                <table style="width: 100%; ">
+                    <tr>
+                        <td style="width: 50%; text-align: center;">a) $$\lim_{y->0}$$</td>
+
+                        <td style="width: 50%; text-align: center;">b) $$f(x+h)-f(x)$$</td>
+                    </tr>
+                    <tr style="height: 3em;">
+                        <td style="text-align: center;">c) $$h$$</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <div style="height: 2%;"></div>
+
+</body>
+<link rel="stylesheet" href="exercises.css">
+<style>
+    nav a {
+        color: #318cf5;
+        text-decoration: none;
+    }
+
+    .dropbtn {
+        cursor: pointer;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #181a1b;
+        min-width: 160px;
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        padding: 8% 10%;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    /* .dropdown-content a:hover {background-color: #f1f1f1} */
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    mjx-container[jax="CHTML"][display="true"] {
+        text-align: left;
+        display: inline;
+    }
+
+    .questions li {
+        font-size: large;
+    }
+
+</style>
+
+</html>

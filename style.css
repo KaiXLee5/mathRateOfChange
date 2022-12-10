@@ -1,0 +1,75 @@
+.info,
+#try-exercises {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 120%;
+}
+
+
+#try-exercises {
+    border: 1px solid white;
+    font-size: 150%;
+    margin-top: 10%;
+}
+
+#try-exercises:hover {
+    cursor: pointer;
+}
+
+.dropbtn {
+    cursor: pointer;
+}
+
+nav {
+    z-index: 1;
+    font-weight: 500;
+    background-color: #181a1b;
+    display: flex;
+    margin: 0 1%;
+    justify-content: space-around;
+    text-decoration: none;
+    position: sticky;
+    top: 0;
+    height: 10%;
+    align-items: center;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0.2);
+}
+
+nav a {
+    text-decoration: none;
+    color: #318cf5
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #181a1b;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 8% 10%;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+/* .dropdown-content a:hover {background-color: #f1f1f1} */
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.inline-text mjx-container[jax="CHTML"][display="true"] {
+    /* text-align: left; */
+    display: inline;
+}
