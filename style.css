@@ -13,11 +13,7 @@
     margin-top: 10%;
 }
 
-#try-exercises:hover {
-    cursor: pointer;
-}
-
-.dropbtn {
+#try-exercises:hover, .dropbtn {
     cursor: pointer;
 }
 
