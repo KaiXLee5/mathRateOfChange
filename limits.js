@@ -1,4 +1,4 @@
-var firstIllustrationChart = new Chart(document.getElementById("firstIllustrationChart"), {
+const firstIllustrationChart = new Chart(document.getElementById("firstIllustrationChart"), {
 
     type: "bar",
     data: {

@@ -1,8 +1,8 @@
-var slider = document.getElementById("myRange")
-var text = document.getElementById("textRange")
-var currIroc = document.getElementById("currIroc")
+const slider = document.getElementById("myRange")
+const text = document.getElementById("textRange")
+const currIroc = document.getElementById("currIroc")
 
-var firstPoint = {
+const firstPoint = {
     label: 'point A',
     type: 'line',
     pointRadius: 5,
@@ -12,7 +12,7 @@ var firstPoint = {
     fill: false,
 }
 
-var secondPoint = {
+const secondPoint = {
     label: 'point B',
     type: 'line',
     pointRadius: 5,
@@ -22,7 +22,7 @@ var secondPoint = {
     fill: false,
 }
 
-var h = {
+const h = {
     label: 'magnitude of h',
     type: 'line',
     pointRadius: 2,
@@ -32,7 +32,7 @@ var h = {
     fill: false,
 }
 
-var firstPrincipleChart = new Chart(document.getElementById("firstPrincipleChart"), {
+const firstPrincipleChart = new Chart(document.getElementById("firstPrincipleChart"), {
 
     type: "bar",
     data: {
@@ -50,7 +50,7 @@ var firstPrincipleChart = new Chart(document.getElementById("firstPrincipleChart
     },
 });
 
-var plotting = {
+const plotting = {
     label: 'iroc',
     type: 'line',
     pointRadius: 4,
@@ -59,7 +59,7 @@ var plotting = {
     fill: false,
 }
 
-var deltaX = {
+const deltaX = {
     label: 'delta x',
     type: 'line',
     pointRadius: 4,
@@ -68,7 +68,7 @@ var deltaX = {
     fill: false,
 }
 
-var irocChart = new Chart(document.getElementById("irocChart"), {
+const irocChart = new Chart(document.getElementById("irocChart"), {
     type: "bar",
     data: {
         labels: [-3, -2, -1, 0, 1, 2, 3],

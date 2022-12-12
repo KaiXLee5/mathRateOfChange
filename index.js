@@ -1,9 +1,9 @@
-var xValues = [-3, -2, -1, 0, 1, 2, 3];
+const xData = [-3, -2, -1, 0, 1, 2, 3];
 
-var arocChart = new Chart(document.getElementById('arocChart'), {
+const arocChart = new Chart(document.getElementById('arocChart'), {
     type: "bar",
     data: {
-        labels: xValues,
+        labels: xData,
         datasets: [{
             label: 'y=x^2',
             type: 'line',
